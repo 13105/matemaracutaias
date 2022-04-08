@@ -12,10 +12,14 @@ def raiz(s,x, iteracoes=1):
         Obs:
             se o número for muito distante da raiz, 
             mais iterações serão necessárias para obter uma aproximação mais precisa.
-        
+            ---
+            Não é mais rápido que o método de Newton e Joseph Raphson 
+            
         Funciona a base de convergencia.
+        
+        
     """
-    getcontext().prec = 100
+    getcontext().prec = 30
     
     
     while iteracoes > 0:
@@ -27,5 +31,5 @@ def raiz(s,x, iteracoes=1):
         iteracoes-=1
         
 
-raiz(36,9,5)
+
     
