@@ -5,21 +5,15 @@ from py.gerar_quadrados_perfeitos import *
 from py.snippets import *
 
 
-
-def ultimo_digito(n):
-    str_n = str(n)
-    
-    
-    if int(str_n[-2:]) == 0: 
-        return "00"
-    else: 
-        return str_n[-1:]
-
 def possivel_quadrado_perfeito(n):
-    n_ultimo_digito = int(ultimo_digito(n))
-    if n_ultimo_digito not in (0,1,4,5,6,9):
-        return False
+    str_ultimos_dois_digitos = str(n)[-2:]
+    n_ultimo_digito = int(str_ultimos_dois_digitos[1])
     
+    if n_ultimo_digito in (2,3,7,8,0):
+        if str_ultimos_dois_digitos != "00":     
+            return False
+        
+            
     if raiz_digital(n) not in (1,4,7,9):
         return False
     
@@ -45,7 +39,8 @@ def possivel_quadrado_perfeito(n):
         if ultimos_dois_digitos % 4:
             #não é divisivel por 4, então não é um quadrado perfeito.
             return False
-    return True    
+            
+    return True
 
 
 #gerar_quadrados_perfeitos(20,10000000,10000, numeros_gerados)
@@ -70,7 +65,7 @@ for i in range(0,iteracoes):
         
         linha_dados += "%s;%s,%s"%(
             raiz_digital(n[1]),
-            ultimo_digito(n[1]),
+            str(n[1])[-1:],
             possivel_quadrado_perfeito(n[1])
         )
         
@@ -86,10 +81,13 @@ for i in range(0,iteracoes):
             
             
             
-    print("Resultado: %d/%d | %d%% de acerto. | Progresso total : %d%%"%(
+    print("Resultado: %d/%d | %d%% dos valores não puderam ser filtrados. | %d/%d (%d%%) Não são quadrados perfeitos | Progresso total : %d%%"%(
     possiveis, 
     total,
     (possiveis * 100/total),
+    (total-possiveis),
+    total,
+    ((total-possiveis)*100)/total,
     (i*100/iteracoes)
     ))
     s.append(possiveis * 100/total)
