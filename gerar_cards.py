@@ -4,19 +4,29 @@ from py.gerar_quadrados_imperfeitos import *
 from py.gerar_quadrados_perfeitos import *
 from py.snippets import *
 
-numeros_gerados = [(167.571,28080)]
-
-gerar_quadrados_imperfeitos(100,1000000, 10, numeros_gerados)
-gerar_quadrados_perfeitos(20,10000000,10, numeros_gerados)    
-    
+from random import shuffle
+numeros_gerados = []
 
 
 
+gerar_quadrados_imperfeitos(100 ,1000, 10, numeros_gerados)
+gerar_quadrados_imperfeitos(100 ,1000, 10, numeros_gerados)
+gerar_quadrados_imperfeitos(1000 ,10000, 10, numeros_gerados)
+gerar_quadrados_imperfeitos(1000 ,10000, 10, numeros_gerados)
+gerar_quadrados_imperfeitos(1000 ,100000, 10, numeros_gerados)
+
+gerar_quadrados_perfeitos(15,31,5, numeros_gerados) 
+gerar_quadrados_perfeitos(15,31,5, numeros_gerados)       
+gerar_quadrados_perfeitos(31,100,10, numeros_gerados)       
+gerar_quadrados_perfeitos(31,100,10, numeros_gerados)   
+gerar_quadrados_perfeitos(32,99,10, numeros_gerados)   
+gerar_quadrados_perfeitos(100,316,10, numeros_gerados) 
+  
+shuffle(numeros_gerados)
 def possivel_quadrado_perfeito(n):
     str_ultimos_dois_digitos = str(n)[-2:]
     n_ultimo_digito = int(str_ultimos_dois_digitos[1])
     
-    print("-------->",str_ultimos_dois_digitos)
     if n_ultimo_digito in (2,3,7,8,0):
         if str_ultimos_dois_digitos != "00":     
             return "Não"
@@ -47,7 +57,7 @@ def possivel_quadrado_perfeito(n):
         if ultimos_dois_digitos % 4:
             #não é divisivel por 4, então não é um quadrado perfeito.
             return "Não"
-    return "Sim"    
+    return "Sim"
 
     
 for n in numeros_gerados:

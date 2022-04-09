@@ -17,7 +17,9 @@ def gerar_quadrados_imperfeitos(a,b, quantidade, numeros_gerados):
         raiz = sqrt(n)
         
         while (int(raiz)**2 == n) or (n in numeros_gerados):
+            #print(int(raiz)**2,"==",n)
             n = randint(a,b)
+            
             raiz = sqrt(n)
         
         numeros_gerados.append((raiz,n))
