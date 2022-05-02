@@ -26,10 +26,9 @@ def raiz(s,x, iteracoes=1):
         
         x = Decimal((s+x**2)/(2*x))
         
-        print(x,"|", "Iteração ->",iteracoes,"\n")
-        
         iteracoes-=1
         
-
+    return x
+    
 
     

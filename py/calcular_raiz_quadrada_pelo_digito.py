@@ -64,7 +64,7 @@ def raiz(n):
         
     else:
         print("\n %d Não é um quadrado perfeito !!!"%(n))
-        return
+        return False
         
     quadrado_mais_proximo = floor(sqrt(parte_esquerda))
     

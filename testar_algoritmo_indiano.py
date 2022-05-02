@@ -2,7 +2,6 @@ from math import *
 
 
 from py.calcular_raiz_quadrada_pelo_digito import *
-from py.gerar_quadrados_perfeitos import *
 
 
 iteracoes = 99999

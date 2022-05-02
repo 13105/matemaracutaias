@@ -13,13 +13,16 @@ def gerar_quadrados_perfeitos(a,b, quantidade, numeros_gerados):
     
     
     while quantidade:
-        
         n = randint(a,b)
+        tupla = (n, n**2)
         
-        while n in numeros_gerados:
+        
+        while tupla in numeros_gerados:
+            
             n = randint(a,b)
+            tupla = (n, n**2)
         
-        numeros_gerados.append((n,n**2))
+        numeros_gerados.append(tupla)
         quantidade-=1
     
     return
