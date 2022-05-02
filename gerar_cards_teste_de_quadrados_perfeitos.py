@@ -1,5 +1,6 @@
 from statistics import *
 
+import ..py as py
 from py.gerar_quadrados_imperfeitos import *
 from py.gerar_quadrados_perfeitos import *
 from py.snippets import *
